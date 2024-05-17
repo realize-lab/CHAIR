@@ -4,25 +4,14 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
+  <!-- <meta name="description" content="DESCRIPTION META TAG">
   <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
   <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/> -->
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <!-- <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZW5N3Q96WS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-ZW5N3Q96WS');
-  </script>
-
+  <meta property="og:image:height" content="630"/> -->
 
   <meta name="twitter:title" content="CHAIR">
   <meta name="twitter:description" content="Adapting CBM for Image Retrieval">
@@ -35,7 +24,7 @@
 
 
   <title>Are They the Same Picture? Adapting Concept Bottleneck Models for Human-AI Collaboration in Image Retrieval</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -247,6 +236,80 @@
     </div>
 </section>
 <!--End BibTex citation -->
+
+<!-- fixed consent text, reject adn accept button -->
+<style>
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #e4e00e;
+  padding: 20px;
+  text-align: center;
+}
+</style>
+
+<div class="cookie-consent">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website uses cookies to ensure you get the best experience on our website. By continuing to use this site, you agree to the use of cookies.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <button class="button is-rounded is-dark" id="accept-cookies">Accept</button>
+          <button class="button is-rounded is-dark" id="reject-cookies">Reject</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("accept-cookies").addEventListener("click", function() {
+    // Load Google Analytics code here
+    // Replace 'YOUR-GOOGLE-ANALYTICS-CODE' with your actual Google Analytics code
+    var gaCode = 'G-ZW5N3Q96WS';
+    var script = document.createElement('script');
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + gaCode;
+    script.async = true;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', gaCode);
+
+    // Remove the cookie consent banner
+    document.querySelector('.cookie-consent').remove();
+
+    // Add it to head tag
+    document.head.appendChild(script);
+
+    // Set a cookie to remember the user's choice
+    document.cookie = 'cookie_consent=accepted; max-age=' + 60*60*24*365;
+  });
+
+  document.getElementById("reject-cookies").addEventListener("click", function() {
+    // Remove the cookie consent banner
+    document.querySelector('.cookie-consent').remove();
+
+    // Set a cookie to remember the user's choice
+    document.cookie = 'cookie_consent=rejected; max-age=' + 60*60*24*365;
+  });
+
+  // hide the cookie consent banner if the user has already accepted cookies
+  if (document.cookie.indexOf('cookie_consent=accepted') > -1) {
+    document.querySelector('.cookie-consent').remove();
+  }
+</script>
 
 
   <footer class="footer">
