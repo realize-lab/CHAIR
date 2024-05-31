@@ -1,0 +1,10 @@
+torch
+torchvision
+hydra-core
+torchmetrics
+python-dotenv
+wandb
+torchmetrics
+matplotlib
+seaborn
+scikit-learn

@@ -1,0 +1,22 @@
+data_dir: "<INSERT DIRECTORY PATH>"
+train_mode: "joint"
+backbone: "r18"
+pretrained: true
+model_type: "fuse"
+model_name: "fuse_bs_64"
+concept_activation: "relu"
+loss: "ce"
+seed: 44
+
+batch_size: 64
+num_workers: 8
+
+dropout: 0.2
+
+optimizer: "sgd"
+lr: 0.001
+step_size: 10
+gamma: 0.1
+weight_decay: 0.000004
+
+epochs: 90
